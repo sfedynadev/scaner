@@ -20,7 +20,7 @@ class PDFUploadController extends Controller
 
         $pdfPath = $request->file('pdf')->store('pdfs');
 
-        $parser = new \Smalot\PdfParser\Parser();
+        $parser = new Parser();
         $pdf = $parser->parseFile(storage_path('app/' . $pdfPath));
         $text = $pdf->getText();
         /*$parser = new Parser();
